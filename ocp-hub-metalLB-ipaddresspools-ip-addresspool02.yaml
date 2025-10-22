@@ -1,0 +1,10 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: ip-addresspool02
+  namespace: metallb-system
+spec:
+  addresses:
+  - 192.22.1.100-192.22.1.199
+  autoAssign: true
+  avoidBuggyIPs: true

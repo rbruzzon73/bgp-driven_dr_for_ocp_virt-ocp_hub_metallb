@@ -1,0 +1,14 @@
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  name: bgp-adv-rtr-hub
+  namespace: metallb-system
+spec:
+  aggregationLength: 32
+  aggregationLengthV6: 128
+  ipAddressPools:
+  - ip-addresspool01
+  - ip-addresspool02
+  - ip-addresspool03
+  peers:
+  - to-rtr-hub

@@ -1,0 +1,21 @@
+apiVersion: metallb.io/v1beta2
+kind: BGPPeer
+metadata:
+  name: to-rtr-hub
+  namespace: metallb-system
+spec:
+  nodeSelectors:
+    - matchLabels:
+        app: "metallb-worker"
+  passwordSecret:
+    name: bgp-secret
+    namespace: metallb-system
+  bfdProfile: bfd-profile
+  disableMP: false
+  holdTime: 3s
+  keepaliveTime: 1s
+  myASN: 65008
+  peerASN: 65008
+  peerAddress: 192.100.1.254
+  peerPort: 179
+
